@@ -1,0 +1,28 @@
+{% import _self as menus %}
+{{ menus.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as menus %}
+ 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+ 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  	{% if items %}
+	  	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			{% if menu_level == 0 %}
+		  		<ul class="navbar-nav mr-auto"{{ attributes }}>
+			{% else %}
+		  		<ul>
+			{% endif %}
+			{% for item in items %}
+			  	<li class="nav-item"{{ item.attributes }}>
+					<a class="nav-link" href="{{ item.url }}">{{ item.title }}</a>
+			  	</li>
+			{% endfor %}
+			</ul>
+		</div>
+	</nav>
+
+
+  {% endif %}
+{% endmacro %}
