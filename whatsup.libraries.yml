@@ -4,13 +4,10 @@ global-css:
       assets/css/bootstrap.min.css: {}
       assets/css/style.min.css: {}
 
-global-jsheader:
+global-js:
   header: true
   js:
-    js/script.min.js: {}
+    assets/js/bootstrap.bundle.min.js: {}
+    assets/js/script.js: {}
   dependencies:
     - core/jquery
-
-global-jsfooter:
-  js:
-    js/bootstrap.bundle.min.js: {}

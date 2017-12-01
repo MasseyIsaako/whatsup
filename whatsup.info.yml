@@ -5,8 +5,7 @@ core: 8.x
 
 libraries:
   - whatsup/global-css
-  - whatsup/global-jsheader
-  - whatsup/global-jsfooter
+  - whatsup/global-js
 
 stylesheets-remove:
   - '@stable/css/system/components/align.module.css'
