@@ -4,12 +4,8 @@
 		{{ page.header }}
 	</header>
 
-	{{ page.help }}
-
 	<main role="main">
 		<a id="main-content" tabindex="-1"></a>
-
-		{{ page.branding }}
 
 		<div class="layout-content">
 
@@ -51,7 +47,7 @@
 
 			<!-- TOP TIPS DOUBLE COLUMN LAYOUT FOR FILTERED RESOURCES -->
 			<div class="container-fluid" id="tips-slide">
-				<div class="row">
+				<div class="row" id="tips-row">
 					<div class="col tips-column">
 						<div id="tips-kid" class="tips-image-container">
 							<div class="title-container" id="kid-2">
@@ -74,7 +70,9 @@
 			<!-- DONATE SECTION -->
 			<div class="container-fluid" id="donate-slide">
 				<div id="donate-overlay">
-					<form class="form-control">
+					<form class="form-control" id="donate-form">
+						<h3 class="standard-heading">donate today!</h3>
+						<h4 class="standard-subheading">help us to support others</h4>
 						<div class="row">
 						<div class="col">
 							<label class="paragraph">First name</label>
@@ -86,8 +84,8 @@
 						</div>
 					  </div>
 						<div class="form-group">
-							<label for="exampleInputEmail1" class="paragraph">Email address</label>
-							<input type="email" class="form-control paragraph" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+							<label for="email" class="paragraph">Email address</label>
+							<input type="email" class="form-control paragraph" id="email" aria-describedby="emailHelp" placeholder="Enter email">
 							<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 						</div>
 						<div class="form-group">
@@ -104,22 +102,21 @@
 							</label>
 						</div>
 						<div class="form-group">
-							<label for="exampleFormControlTextarea1" class="paragraph">Write a Message</label>
-							<textarea class="form-control paragraph" id="exampleFormControlTextarea1" rows="3"></textarea>
+							<label for="userMessage" class="paragraph">Write a Message</label>
+							<textarea class="form-control paragraph" id="userMessage" rows="3"></textarea>
 					  	</div>
 					  	<div class="form-group">
 					  		<label class="paragraph">Donation Amount</label>
 							<input type="number" class="form-control paragraph" placeholder="20">
 					  	</div>
 
-						<button type="submit" class="btn btn-primary">Donate</button>
+						<button type="submit" class="btn btn-primary btn-lg paragraph">DONATE</button>
 					</form>
 				</div>
 			</div>
 
 		</div>
 
-		<!-- {{ page.content }} -->
 		{% if page.footer %}
 			<footer role="contentinfo">
 				{{ page.footer }}

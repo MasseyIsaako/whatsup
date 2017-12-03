@@ -1,0 +1,22 @@
+{% import _self as menus %}
+{{ menus.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as menus %}
+  <nav class="navbar navbar-expand-lg navbar-light" id="footer-container">
+      {% if items %}
+      {% if menu_level == 0 %}
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0 custom-nav" {{ attributes }}>
+      {% else %}
+          <ul>
+      {% endif %}
+      {% for item in items %}
+          <li class="nav-item"{{ item.attributes }}>
+          <a class="nav-link paragraph" href="{{ item.url }}">{{ item.title }}</a>
+          </li>
+      {% endfor %}
+      </ul>
+      <p class="paragraph">Copyright  &#169; 2017 <a href="https://masseyisaako.com" target="_blank">Massey Isa'ako</a></p>
+  </nav>
+  {% endif %}
+{% endmacro %}
