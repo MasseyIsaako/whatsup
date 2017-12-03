@@ -1,7 +1,370 @@
 // IMPORTING VARIABLES, MIXINS AND FONTS
 @import 'var_mix';
 
-body{
+html, body{
 	background-color:white;
 	font-family:'Montserrat', sans-serif;
+}
+
+.btn{
+	&:active, &:focus{
+		outline:0 !important;
+		box-shadow: none !important;
+	}
+}
+
+// FONT STYLING ACCORDING TO TYPOGRAPHY PLAN
+// JUMBO
+.jumbo-heading{
+	font-family:'Montserrat Alternates', sans-serif;
+	font-weight:600;
+	font-size:52px;
+	text-transform:uppercase;
+}
+
+.jumbo-subheading{
+	font-family:'Montserrat Alternates', sans-serif;
+	font-weight:400;
+	font-size:28px;
+	text-transform:uppercase;
+	font-style:italic;
+}
+
+// STANDARD HEADING AND PARAGRAPH
+.standard-heading{
+	font-family:'Montserrat Alternates', sans-serif;
+	font-weight:600;
+	font-size:24px;
+	text-transform:uppercase;
+}
+
+.standard-subheading{
+	font-family:'Montserrat Alternates', sans-serif;
+	font-weight:400;
+	font-size:18px;
+	text-transform:uppercase;
+	font-style:italic;
+}
+
+.paragraph{
+	font-family:'Montserrat', sans-serif;
+	font-weight:400;
+	font-size:14px;
+}
+
+// STYLING OTHER BLOCKS
+.layout-container{overflow:hidden;}
+
+#splash-container{
+	@include backgroundIMG;
+	width:100vw;
+	height:100vh;
+	position:relative;
+	top:0px;
+	z-index:0;
+	background-image:url("../images/mi-pham-223464.jpg");
+
+	#splash-overlay{
+		position:absolute;
+		width:100%;
+		height:100%;
+		background: linear-gradient(rgba(191, 0, 255, 0.75), rgba(191, 0, 255, 0));
+
+		#main-nav-container{
+		z-index:99;
+		background-color:none;
+		padding:10px;
+
+		.navbar-brand{
+			img{
+				width:70px;
+				height:70px;
+			}
+		}
+
+		#main-nav{
+			position:relative;
+			justify-content:space-evenly;
+			width:100%;
+
+				.nav-link{
+					color:white;
+					text-transform:uppercase;
+
+					&:hover{
+						text-decoration:underline;
+					}
+				}
+			}
+		}
+
+		#title-flex-container{
+			display:flex;
+			flex-direction:column;
+			justify-content:center;
+			width:100%;
+			height:100%;
+			position:absolute;
+			top:0px;
+
+			#title-container{
+				width:45%;
+				margin:0px 27.5%;
+				height:auto;
+				color:white;
+
+				#title-number, #title-company, #title-slogan, #title-button{
+					animation-duration: 3s;
+				}
+
+				#title-number{animation-delay: 1s;}
+				#title-company{animation-delay: 2s;}
+				#title-slogan{animation-delay: 3s;}
+				#title-button{animation-delay: 4s;}
+
+				#title-button{
+					float:right;
+					background-color:$splashPurple;
+					border-color:$splashPurple;
+
+					&:hover{
+						background-color:white;
+						color:$splashPurple;
+						cursor:pointer;
+					}
+				}
+			}
+
+			#click-to-next{
+				background-color:white;
+				position:absolute;
+				align-self:center;
+				bottom:-32.5px;
+				width:65px;
+				height:65px;
+				border-top-right-radius:50px;
+				border-top-left-radius:50px;
+				animation-duration: 4s;
+				animation-delay: 5s;
+
+				#down-arrow{
+					text-align:center;
+					width:100%;
+					color:$splashPurple;
+				}
+			}
+		}
+	}
+}
+
+// STYLING INFORMATION SLIDE AND CHILD COMPONENTS
+#basic-info-slide{
+	width:100%;
+	height:100%;
+	background-color:white;
+	position:relative;
+	margin-top:75px;
+
+	.info-column{
+		min-height:200px !important;
+		text-align:center;
+		padding-top:50px;
+		border-style:solid;
+		border-width:10px 0px 0px 0px;
+		margin:0px 100px;
+
+		.standard-subheading{
+			font-style:normal;
+		}
+	}
+
+	#info-talk{border-color:#803D9C;}
+	#info-resources{border-color:#54BE14;}
+	#info-about{border-color:#1AB3B0;}
+}
+
+
+// STYLING TOP TIPS SLIDE AND CHILD COMPONENTS
+#tips-slide{
+	margin-top:50px;
+	background-color:$splashPurple;
+
+	.tips-column{
+		height:400px;
+		padding:0px;
+		overflow:hidden;
+	}
+
+	#tips-kid{
+		@include backgroundIMG;
+		background:url('../images/ben-white-148783.jpg');
+		background-position:center;
+		width:100%;
+		height:100%;
+	}
+
+	#kid-2{border-color:rgb(88, 196, 198);}
+	#teen-2{border-color:rgb(0, 64, 255);}
+
+	#tips-teen{
+		@include backgroundIMG;
+		background:url('../images/xan-griffin-419096.jpg');
+		background-position:center;
+		width:100%;
+		height:100%;
+	}
+
+	.tips-column:hover .tips-image-container,
+	.tips-column:focus .tips-image-container{
+		transform:scale(1.1);
+		transition:1s ease;
+	}
+
+	.tips-image-container:hover .title-container,
+	.tips-image-container:focus .title-container{
+		height:100%;
+		transition:1s ease;
+	}
+
+	.tips-image-container:hover .btn,
+	.tips-image-container:focus .btn{
+		display:block;
+	}
+
+	.title-container{
+		display:flex;
+		flex-direction:column;
+		justify-content:center;
+		position:absolute;
+		bottom:0px;
+		background-color:rgba(255, 255, 255, 0.8);
+		overflow: hidden;
+		width:100%;
+		height:50px;
+		transition:0.5s ease;
+		padding:10px 5px;
+		border-style:solid;
+		border-width:0px 0px 10px 0px;
+
+		.standard-subheading{
+			font-family:'Montserrat', sans-serif;
+			font-style:normal;
+			text-align:center;
+		}
+
+		.btn{
+			max-width:115px;
+			align-self:center;
+			margin-top:20px;
+			background-color:$green;
+			border-color:$green;
+			transition:1s all;
+			cursor:pointer;
+			display:none;
+
+			&:hover{
+				background-color:#488700;
+			}
+		}
+	}
+}
+
+// STYLING FOR DONATE SECTION
+#donate-slide{
+	@include backgroundIMG;
+	background-image:url("../images/riccardo-annandale-140624.jpg");
+	height:100vh;
+	padding:0px;
+
+	#donate-overlay{
+		display:flex;
+		align-items:center;
+		justify-content:center;
+		background-color:rgba(0, 0, 0, 0.77);
+		width:100%;
+		height:100%;
+	}
+
+	.form-control{
+		width:50%;
+		align-self:center;
+		background:none;
+
+		.paragraph{
+			color:white !important;
+		}
+	}
+
+	.btn{
+		background-color:$green;
+		border-color:$green;
+		align-self:center;
+	}
+}
+
+@media screen and (max-width: 992px){
+	// FONT STYLING ACCORDING TO TYPOGRAPHY PLAN
+	// JUMBO
+	.jumbo-heading{
+		font-size:45px;
+		text-transform:uppercase;
+	}
+
+	.jumbo-subheading{
+		font-size:24px;
+		text-transform:uppercase;
+	}
+
+	// STANDARD HEADING AND PARAGRAPH
+	.standard-heading{
+		font-size:20px;
+		text-transform:uppercase;
+	}
+
+	.standard-subheading{
+		font-size:15px;
+		text-transform:uppercase;
+	}
+
+	.paragraph{font-size:14px;}
+
+	#splash-container{
+		background-position:left;
+
+		#main-nav-container{
+		background-color:white;
+
+			.navbar-brand{
+				img{
+					width:50px;
+					height:50px;
+				}
+			}
+
+			.nav-link{
+				color:#999 !important;
+				text-align:center;
+			}
+		}
+
+		#title-container{
+			display:flex;
+			flex-direction:column;
+			justify-content:center;
+			width:75% !important;
+			margin:0px 12.5% !important;
+
+			h1, h2{
+				text-align:center !important;
+			}
+
+			#title-button{
+				align-self:center;
+				float:none !important;
+				margin-top:20px;
+			}
+		}
+	}
+
+	#basic-info-slide .info-column{margin:0px 50px;}
 }

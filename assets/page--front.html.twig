@@ -1,27 +1,131 @@
 <div class="layout-container">
 
-  <header role="banner">
-    {{ page.header }}
-  </header>
+	<header role="banner">
+		{{ page.header }}
+	</header>
 
-  {{ page.help }}
+	{{ page.help }}
 
-  <main role="main">
-    <a id="main-content" tabindex="-1"></a>
+	<main role="main">
+		<a id="main-content" tabindex="-1"></a>
 
-    {{ page.branding }}
-    {{ page.navigation}}
+		{{ page.branding }}
 
-    <div class="layout-content">
-      {{ page.content }}
-    </div>{# /.layout-content #}
+		<div class="layout-content">
 
-  </main>
+			<!-- SPLASH FRONT PAGE WITH CSS ANIMATIONS -->
+			<div id="splash-container">
+				<div id="splash-overlay">
+					{{ page.navigation}}
+					<div id="title-flex-container">
+						<div id="title-container">
+							<h2 id="title-number" class="jumbo-subheading animated fadeInLeft" style="text-align:left">0800 942 8787</h2>
+							<h1 id="title-company" class="jumbo-heading animated fadeInLeft" style="text-align:center">WHAT'S UP</h1>
+							<h2 id="title-slogan" class="jumbo-subheading animated fadeInLeft" style="text-align:right">A SAFE PLACE,<br>TALK ABOUT ANYTHING</h2>
+							<button id="title-button" type="button" class="btn btn-primary animated fadeInUp">Let's Talk</button>
+						</div>
+						<a href="#basic-info-slide" id="click-to-next" class="animated bounce">
+							<i id="down-arrow" class="fa fa-chevron-down" aria-hidden="true"></i>
+						</a>
+					</div>
+				</div>
+			</div>
 
-  {% if page.footer %}
-    <footer role="contentinfo">
-      {{ page.footer }}
-    </footer>
-  {% endif %}
+			<!-- TRIPLE COLUMN LAYOUT FOR BASIC INFORMATION -->
+			<div class="container-fluid" id="basic-info-slide">
+				<div class="row">
+					<div id="info-talk" class="col info-column">
+						<h3 class="standard-subheading"><strong>Let's Talk</strong></h3>
+						<p class="paragraph">If you need support or someone to talk to, give us a call or chat with us online – we'd love to talk with you.</p>
+					</div>
+					<div id="info-resources" class="col info-column">
+						<h3 class="standard-subheading"><strong>Resources</strong></h3>
+						<p class="paragraph">You've come to the right place! We've put together our top tips around the top topics people call about.</p>
+					</div>
+					<div id="info-about" class="col info-column">
+						<h3 class="standard-subheading"><strong>About Us</strong></h3>
+						<p class="paragraph">We are a counselling helpline for children and young people.  Our counsellors are available 365 days a year, and it’s free.</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- TOP TIPS DOUBLE COLUMN LAYOUT FOR FILTERED RESOURCES -->
+			<div class="container-fluid" id="tips-slide">
+				<div class="row">
+					<div class="col tips-column">
+						<div id="tips-kid" class="tips-image-container">
+							<div class="title-container" id="kid-2">
+								<h3 class="standard-subheading">Kids Top Tips</h3>
+								<button type="button" class="btn btn-primary paragraph">VIEW</button>
+							</div>
+						</div>
+					</div>
+					<div class="col tips-column">
+						<div id="tips-teen" class="tips-image-container">
+							<div class="title-container" id="teen-2">
+								<h3 class="standard-subheading">Teens Top Tips</h3>
+								<button type="button" class="btn btn-primary paragraph">VIEW</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- DONATE SECTION -->
+			<div class="container-fluid" id="donate-slide">
+				<div id="donate-overlay">
+					<form class="form-control">
+						<div class="row">
+						<div class="col">
+							<label class="paragraph">First name</label>
+							<input type="text" class="form-control paragraph" placeholder="First name">
+						</div>
+						<div class="col">
+							<label class="paragraph">Last name</label>
+							<input type="text" class="form-control paragraph" placeholder="Last name">
+						</div>
+					  </div>
+						<div class="form-group">
+							<label for="exampleInputEmail1" class="paragraph">Email address</label>
+							<input type="email" class="form-control paragraph" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+							<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+						</div>
+						<div class="form-group">
+							<h3 class="paragraph">Payment Type</h3>
+							<label class="custom-control custom-radio">
+								<input id="radio1" name="radio" type="radio" class="custom-control-input">
+								<span class="custom-control-indicator"></span>
+								<span class="custom-control-description paragraph">One Time</span>
+							</label>
+							<label class="custom-control custom-radio">
+								<input id="radio2" name="radio" type="radio" class="custom-control-input">
+								<span class="custom-control-indicator"></span>
+								<span class="custom-control-description paragraph">Recurring</span>
+							</label>
+						</div>
+						<div class="form-group">
+							<label for="exampleFormControlTextarea1" class="paragraph">Write a Message</label>
+							<textarea class="form-control paragraph" id="exampleFormControlTextarea1" rows="3"></textarea>
+					  	</div>
+					  	<div class="form-group">
+					  		<label class="paragraph">Donation Amount</label>
+							<input type="number" class="form-control paragraph" placeholder="20">
+					  	</div>
+
+						<button type="submit" class="btn btn-primary">Donate</button>
+					</form>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- {{ page.content }} -->
+		{% if page.footer %}
+			<footer role="contentinfo">
+				{{ page.footer }}
+			</footer>
+		{% endif %}
+
+	</main>
 
 </div>{# /.layout-container #}

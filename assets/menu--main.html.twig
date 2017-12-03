@@ -3,20 +3,23 @@
 
 {% macro menu_links(items, attributes, menu_level) %}
   {% import _self as menus %}
- 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
- 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
+ 	<nav class="navbar navbar-expand-lg navbar-light" id="main-nav-container" role="navigation">
+ 		<a class="navbar-brand">
+			<img src="/sites/default/files/logo.png" alt="This is the logo.">
+		</a>
+ 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav-toggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+	  	</button>
 	  	{% if items %}
-	  	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+	  	<div class="collapse navbar-collapse" id="main-nav-toggler">
 			{% if menu_level == 0 %}
-		  		<ul class="navbar-nav mr-auto"{{ attributes }}>
+		  		<ul class="navbar-nav mr-auto mt-2 mt-lg-0" id="main-nav" {{ attributes }}>
 			{% else %}
 		  		<ul>
 			{% endif %}
 			{% for item in items %}
 			  	<li class="nav-item"{{ item.attributes }}>
-					<a class="nav-link" href="{{ item.url }}">{{ item.title }}</a>
+					<a class="nav-link paragraph" href="{{ item.url }}">{{ item.title }}</a>
 			  	</li>
 			{% endfor %}
 			</ul>

@@ -1,6 +1,15 @@
 // VARIABLES, IMPORTS AND MIXINS
 
 // Google Import Fonts
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates:400,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400|Montserrat+Alternates:400,600');
 
 // COLOR VARIABLES
+$splashPurple:rgb(191, 0, 255);
+$green:rgb(84, 190, 20);
+
+// BACKGROUND MIXIN
+@mixin backgroundIMG{
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center;	
+}
