@@ -22,5 +22,5 @@
 		    $('body, html').animate({scrollTop: pos});
 		});
 	});
-
+	
 }(jQuery));

@@ -89,7 +89,7 @@ html, body{
 
 		#main-nav-container{
 			z-index:99;
-			background-color:none;
+			background:none;
 			padding:10px;
 
 			.navbar-brand{
@@ -326,7 +326,7 @@ html, body{
 	}
 }
 
-#footer-container{
+#footer-container, #account-container{
 	display:block;
 	padding:50px 0px 10px 0px;
 
@@ -366,7 +366,7 @@ html, body{
 		background-position:left;
 
 		#main-nav-container{
-		background-color:white;
+		background-color:white !important;
 
 			.navbar-brand{
 				img{
@@ -409,12 +409,20 @@ html, body{
 	#tips-slide{
 		#tips-row{
 			display:block;
+
+			.title-container{
+				height:100%;
+
+				.btn{
+					display:block;
+				}
+			}
 		}
 	}
 
 	#donate-slide{
 		#donate-form{
-			width:75%;
+			width:90%;
 		}
 	}
 }
