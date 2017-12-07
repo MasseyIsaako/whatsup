@@ -336,6 +336,31 @@ html, body{
 	}
 }
 
+.top-level-page-container{
+	width:60%;
+	margin:20px 20%;
+	overflow:hidden;
+
+	.jumbo-heading, h1, 
+	.jumbo-subheading, h2, 
+	.standard-heading, h3, 
+	.standard-subheading, h4{
+		color:$green;
+	}
+
+	
+	.col{
+		display:flex;
+		flex-direction:column;
+		overflow:hidden;
+		padding:20px;
+
+		img{
+			align-self:center;
+		}
+	}
+}
+
 @media screen and (max-width: 992px){
 	// FONT STYLING ACCORDING TO TYPOGRAPHY PLAN
 	// JUMBO
