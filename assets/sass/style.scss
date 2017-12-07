@@ -15,14 +15,14 @@ html, body{
 
 // FONT STYLING ACCORDING TO TYPOGRAPHY PLAN
 // JUMBO
-.jumbo-heading{
+.jumbo-heading, h1{
 	font-family:'Montserrat Alternates', sans-serif;
 	font-weight:600;
 	font-size:52px;
 	text-transform:uppercase;
 }
 
-.jumbo-subheading{
+.jumbo-subheading, h2{
 	font-family:'Montserrat Alternates', sans-serif;
 	font-weight:400;
 	font-size:28px;
@@ -31,14 +31,14 @@ html, body{
 }
 
 // STANDARD HEADING AND PARAGRAPH
-.standard-heading{
+.standard-heading, h3{
 	font-family:'Montserrat Alternates', sans-serif;
 	font-weight:600;
 	font-size:24px;
 	text-transform:uppercase;
 }
 
-.standard-subheading{
+.standard-subheading, h4{
 	font-family:'Montserrat Alternates', sans-serif;
 	font-weight:400;
 	font-size:18px;
@@ -339,23 +339,23 @@ html, body{
 @media screen and (max-width: 992px){
 	// FONT STYLING ACCORDING TO TYPOGRAPHY PLAN
 	// JUMBO
-	.jumbo-heading{
+	.jumbo-heading, h1{
 		font-size:45px;
 		text-transform:uppercase;
 	}
 
-	.jumbo-subheading{
+	.jumbo-subheading, h2{
 		font-size:24px;
 		text-transform:uppercase;
 	}
 
 	// STANDARD HEADING AND PARAGRAPH
-	.standard-heading{
+	.standard-heading, h3{
 		font-size:20px;
 		text-transform:uppercase;
 	}
 
-	.standard-subheading{
+	.standard-subheading, h4{
 		font-size:15px;
 		text-transform:uppercase;
 	}
