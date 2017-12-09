@@ -2,19 +2,14 @@
   {% if multiple %}
     <div{{ attributes }}>
       {% for item in items %}
-        <div{{ item.attributes }}>{{ item.title }}</div>
+        <div{{ item.attributes }}>{{ item.content }}</div>
       {% endfor %}
     </div>
   {% else %}
     {% for item in items %}
-      <div id="product-image-container" {{ attributes }}>
-        <div id="product-content-container">
-            <div id="aside-left">
-              {{ item.content }}
-            </div>
-            <div id="aside-right">
-              <a href="http://192.168.33.10/payment-successful" class="btn btn-primary">BUY NOW</a>
-            </div>
+      <div id="overall-price-container"{{ attributes }}>
+        <div id="price-container">
+          <p>{{ item.content }}</p>
         </div>
       </div>
     {% endfor %}
