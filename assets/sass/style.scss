@@ -52,13 +52,15 @@ html, body{
 	font-size:14px;
 }
 
+.white{color:white !important;}
+
 .custom-nav{
 	position:relative;
 	justify-content:space-evenly;
 	width:100%;
 
 		.nav-link{
-			color:white;
+			color:#333333 !important;
 			text-transform:uppercase;
 			text-align:center;
 			font-weight:400;
@@ -70,9 +72,10 @@ html, body{
 }
 
 #main-nav-container{
-	z-index:99;
+	z-index:99999;
 	background:none;
 	padding:10px;
+	background-color:white;
 
 	.navbar-brand{
 		img{
@@ -86,6 +89,7 @@ html, body{
 .layout-container{
 	overflow:hidden;
 	min-height:100vh;
+	background:url("../images/mi-pham-223464.jpg");
 }
 
 #splash-container{
@@ -174,7 +178,7 @@ html, body{
 	height:auto;
 	background-color:white;
 	position:relative;
-	margin-top:75px;
+	padding:50px 0px 50px 0px;
 
 	.info-column{
 		min-height:200px !important;
@@ -182,7 +186,7 @@ html, body{
 		padding-top:50px;
 		border-style:solid;
 		border-width:10px 0px 0px 0px;
-		margin:0px 100px;
+		margin:0px 65px;
 
 		.standard-subheading{
 			font-style:normal;
@@ -197,7 +201,6 @@ html, body{
 
 // STYLING TOP TIPS SLIDE AND CHILD COMPONENTS
 #tips-slide{
-	margin-top:50px;
 	background-color:$splashPurple;
 
 	.tips-column{
@@ -332,11 +335,15 @@ html, body{
 #footer-container, #account-container{
 	display:block;
 	padding:50px 0px 10px 0px;
-	bottom:0px;
+	background-color:#333;
+	position:relative;
+
+	.nav-link{color:white !important;}
 
 	p{
 		text-align:center;
 		margin-top:20px;
+		color:white;
 	}
 }
 
@@ -362,6 +369,7 @@ html, body{
 		overflow:hidden;
 		padding:20px;
 		text-align:center;
+		background-color:white;
 
 		h4{font-style:normal;}
 
@@ -370,48 +378,51 @@ html, body{
 }
 
 #page-image-overlay-content{
-	width:100vw;
+	width:75vw;
 	width:100%;
 	background-color:white;
 	position:relative;
 	z-index:9999;
-	margin-top:250px;
 	padding-top:50px;
 
 	#page-content-container{
 		width:60%;
-		margin:20px 20%;
-		overflow:hidden;
+		margin:20px 20% 0px 20%;
+		padding-bottom:50px;
 		height:100%;
 	}
 }
 
 #article-image-container{
 	display:flex;
-	flex-direction:column;
+	flex-direction:row;
 	justify-content:center;
 	position:fixed;
 	left:0px;
 	top:0px;
 	width:100%;
-	height:50vh;
-	height:50%;
+	height:100%;
 	overflow:hidden;
 
 	img{
 		position:absolute;
-		z-index:1;
-		width:100%;
+		z-index:0;
 		height:auto;
+		width:100%;
 	}
 }
 
 #article-image-overlay{
 	width:100vw;
-	background-color:red !important;
-	z-index:99999;
-	position:fixed;
+	height:50vh;
+	background-color:rgba(0, 0, 0, 0.2);
+	z-index:9999;
+	position:relative;
 	top:0px;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	color:white !important;
 }
 
 @media screen and (max-width: 992px){
@@ -504,4 +515,24 @@ html, body{
 			width:90%;
 		}
 	}
+
+	#page-image-overlay-content #page-content-container{
+		width:80%;
+		margin:20px 10% 0px 10%;		
+	}
+
+	.top-level-page-container{
+		.col{
+			width:100% !important;
+		}
+	}
+
+	#article-image-container{
+		img{
+			width:auto;
+			height:100%;
+		}
+	}
 }
+
+#toolbar-bar, .toolbar-bar{z-index:9999999;}
