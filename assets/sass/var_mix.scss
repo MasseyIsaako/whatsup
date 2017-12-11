@@ -10,6 +10,6 @@ $green:rgb(84, 190, 20);
 // BACKGROUND MIXIN
 @mixin backgroundIMG{
 	background-repeat:no-repeat;
-	background-size:cover;
+	background-size:cover !important;
 	background-position:center;	
 }

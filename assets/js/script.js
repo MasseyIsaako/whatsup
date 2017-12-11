@@ -21,6 +21,5 @@
 		    // animated top scrolling
 		    $('body, html').animate({scrollTop: pos});
 		});
-	});
-	
+	});	
 }(jQuery));
