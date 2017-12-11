@@ -1,11 +1,13 @@
 // IMPORTING VARIABLES, MIXINS AND FONTS
 @import 'var_mix';
 
+
 html, body{
 	background-color:white;
 	font-family:'Montserrat', sans-serif;
 }
 
+// STYLING BUTTON FOR DEFAULT
 .btn{
 	&:active, &:focus{
 		outline:0 !important;
@@ -13,19 +15,22 @@ html, body{
 	}
 }
 
-.row{
-	background-color:white;
-}
+// STYLING ROW FOR BACKGROUND
+.row{background-color:white;}
 
+// ADMIN INFO PADDING ADDED FOR CHILD CONTENT VISIBILITY
 .admin-info{
 	padding:50px;
 	background-color:white;
 }
 
+// FOR ADMIN SECTION
 .js-form-wrapper{
 	padding:50px;
 	background-color:white;
 }
+
+.trigger, .focusable{z-index:999999999999;}
 
 // FONT STYLING ACCORDING TO TYPOGRAPHY PLAN
 // JUMBO
@@ -66,11 +71,13 @@ html, body{
 	font-size:14px;
 }
 
+// SETTING CERTAIN TEXT TO WHITE ACCORDING TO CONTRASTING BACKGROUND
 .white{
 	color:white !important;
 	text-align:center;
 }
 
+// NAV POSITIONING OF LINKS
 .custom-nav{
 	position:relative;
 	justify-content:space-evenly;
@@ -88,6 +95,7 @@ html, body{
 	}
 }
 
+// MAKE SURE NAV IS AT THE VERY TOP
 #main-nav-container{
 	z-index:99999;
 	background:none;
@@ -513,6 +521,13 @@ html, body{
 	}
 }
 
+@media screen and (max-height:800px){
+	#article-image-container img{
+		width:100%;
+		height:auto !important;
+	}
+}
+
 @media screen and (max-width: 992px){
 	// FONT STYLING ACCORDING TO TYPOGRAPHY PLAN
 	// JUMBO
@@ -612,6 +627,26 @@ html, body{
 	.top-level-page-container{
 		.col{
 			width:100% !important;
+		}
+	}
+
+	#aside-left, #aside-right{
+		width:100% !important;
+		padding:20px;
+	}
+
+	#overall-price-container{
+		background-color:white;
+		height:40px;
+		padding-top:75px;
+
+		#price-container{
+			z-index:9999999999;
+
+			p{
+				width:100%;
+				text-align:center;
+			}
 		}
 	}
 }
